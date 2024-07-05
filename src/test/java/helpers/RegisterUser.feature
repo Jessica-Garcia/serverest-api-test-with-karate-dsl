@@ -14,4 +14,4 @@ Feature: Create User
       And request userRequestBody
       When method POST
       Then status 201
-      * def userId = response._id
+      And def userId = response._id
