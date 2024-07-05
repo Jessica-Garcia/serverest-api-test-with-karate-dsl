@@ -6,8 +6,6 @@ Feature: Get Users
         * def userId = result.userId
         * configure afterFeature = function(){ karate.call('classpath:helpers/DeleteUser.feature'), { userId: userId } }
         
-
-   
     Scenario: List users successfully 
         Given path 'usuarios'
         When method Get
@@ -16,7 +14,7 @@ Feature: Get Users
         And match response.quantidade == "#number"
     
     Scenario: List user by id successfully
-        #get by id - test
+        
         Given path 'usuarios', userId
         When method Get
         Then status 200
@@ -49,5 +47,4 @@ Feature: Get Users
         Then status 200
         And match response.usuarios == "#array"
         And match response.quantidade == 0
-
-    
+  

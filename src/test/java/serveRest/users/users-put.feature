@@ -2,9 +2,8 @@ Feature: Update User
 
    Background: preconditions
       Given url baseUrl
-      * def result = callonce read('classpath:helpers/RegisterUser.feature')
-      * def userId = result.userId
-
+      * def createdUser = callonce read('classpath:helpers/RegisterUser.feature')
+      * def userId = createdUser.userId
       * def userRequestBody = read('classpath:serveRest/json/newUserRequestBody.json')
       * def dataGenerator = Java.type('helpers.DataGenerator')
 
